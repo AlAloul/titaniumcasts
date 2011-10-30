@@ -73,8 +73,8 @@ describe Episode do
   it "has media.railscasts.com asset url" do
     episode = Factory(:episode, :name => "Hello world")
     episode.position = 23
-    episode.asset_url("videos").should eq("http://media.railscasts.com/assets/episodes/videos/023-hello-world")
-    episode.asset_url("videos", "mp4").should eq("http://media.railscasts.com/assets/episodes/videos/023-hello-world.mp4")
+    episode.asset_url("videos").should eq("http://titaniumcasts.s3.amazonaws.com/episodes/videos/023-hello-world")
+    episode.asset_url("videos", "mp4").should eq("http://titaniumcasts.s3.amazonaws.com/episodes/videos/023-hello-world.mp4")
   end
 
   it "has files with file sizes" do
@@ -82,7 +82,7 @@ describe Episode do
     episode.files[0][:name].should eq("source code")
     episode.files.map { |f| f[:name] }.should eq(["source code", "mp4", "m4v", "webm", "ogv"])
     episode.files.map { |f| f[:info] }.should eq(["Project Files in Zip", "Full Size H.264 Video", "Smaller H.264 Video", "Full Size VP8 Video", "Full Size Theora Video"])
-    episode.files[0][:url].should include("http://media.railscasts.com/assets/episodes/sources/")
+    episode.files[0][:url].should include("http://titaniumcasts.s3.amazonaws.com/episodes/sources/")
     episode.files[0][:size].should eq(12345)
   end
 
@@ -95,9 +95,9 @@ describe Episode do
     episode = Factory(:episode, :name => "Hello world")
     episode.position = 42
     %w[mp4 m4v webm ogv].each_with_index do |ext, index|
-      FakeWeb.register_uri(:head, "http://media.railscasts.com/assets/episodes/videos/042-hello-world.#{ext}", :content_length => index)
+      FakeWeb.register_uri(:head, "http://titaniumcasts.s3.amazonaws.com/episodes/videos/042-hello-world.#{ext}", :content_length => index)
     end
-    FakeWeb.register_uri(:head, "http://media.railscasts.com/assets/episodes/sources/042-hello-world.zip", :content_length => 4)
+    FakeWeb.register_uri(:head, "http://titaniumcasts.s3.amazonaws.com/episodes/sources/042-hello-world.zip", :content_length => 4)
     episode.load_file_sizes
     episode.file_sizes.should eq(
       "mp4" => "0",
