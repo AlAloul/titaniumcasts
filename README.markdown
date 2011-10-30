@@ -1,13 +1,14 @@
-# RailsCasts
+# TitaniumCasts
 
-This is the source code for the [RailsCasts site](http://railscasts.com/). If you want the source code for the episodes, see the [railscasts-episodes](http://github.com/ryanb/railscasts-episodes) project.
+This is the source code for a new site that I'm annoucing soon. It is totally based (and all credits should be given to) the RailsCasts source code, and the amazing job of Ryan Bates. See more about RailsCasts below.
 
-Please [let me know](https://github.com/inbox/new/ryanb) if you plan to use this app for your site.
+## RailsCasts
 
+Please [let him know](https://github.com/inbox/new/ryanb) if you plan to use his app for your site.
 
 ## Setup
 
-This is designed to run on Ruby 1.9.2 or higher. If you're using [RVM](http://rvm.beginrescueend.com/) it should automatically switch to 1.9.2 when entering the directory.
+This is designed to run on Ruby 1.9.3 or higher. If you're using [RVM](http://rvm.beginrescueend.com/) it should automatically switch to 1.9.3 when entering the directory.
 
 Run `script/setup`. This will generate the config files, install gems, and migrate the database.
 
