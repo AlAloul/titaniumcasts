@@ -2,10 +2,10 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title><%= content_for?(:title) ? yield(:title) : "Ruby on Rails Screencasts" %> - RailsCasts</title>
-    <meta name="description" content="Short Ruby on Rails screencasts containing tips, tricks and tutorials. Great for both novice and experienced web developers." />
-    <meta name="keywords" content="rails, ruby on rails, screencasts, railscast, railscasts, tips, tricks, tutorials, training, podcasts, programming" />
-    <link rel="alternate" type="application/rss+xml" title="Episodes RSS" href="http://feeds.feedburner.com/railscasts" />
+    <title><%= content_for?(:title) ? yield(:title) : "Titanium Mobile Screencasts" %> - TitaniumCasts</title>
+    <meta name="description" content="Short Titanium Mobile screencasts containing tips, tricks and tutorials. Great for both novice and experienced web developers." />
+    <meta name="keywords" content="titanium mobile, appcelerator, javascript, coffeescript, screencasts, titaniumcast, titaniumcasts, tips, tricks, tutorials, training, podcasts, programming" />
+    <link rel="alternate" type="application/rss+xml" title="Episodes RSS" href="http://feeds.feedburner.com/titaniumcasts" />
     <%= stylesheet_link_tag "application", "coderay" %>
     <%= javascript_include_tag "jquery.min", "rails", "http://cdn.sublimevideo.net/js/3s7oes9q.js", "application" %>
     <%= csrf_meta_tag %>
@@ -13,22 +13,22 @@
   </head>
   <body>
     <div id="top">
-      <div class="logo"><%= link_to image_tag("railscasts_logo.png", :size => "423x56", :alt => "RailsCasts - Ruby on Rails Screencasts"), root_path %></div>
+      <div class="logo"><%= link_to image_tag("railscasts_logo.png", :size => "423x56", :alt => "TitaniumCasts - Titanium Mobile Screencasts"), root_path %></div>
       <ul class="subscribe horizontal">
         <li>
           <%= link_to image_tag("icons/itunes.png", :size => "34x34"), "http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=218282043" %>
           <span class="name">watch on iTunes</span>
         </li>
         <li>
-          <%= link_to image_tag("icons/twitter.png", :size => "34x34"), "http://twitter.com/railscasts" %>
+          <%= link_to image_tag("icons/twitter.png", :size => "34x34"), "http://twitter.com/titaniumcasts" %>
           <span class="name">follow on Twitter</span>
         </li>
         <li>
-          <%= link_to image_tag("icons/facebook.png", :size => "34x34"), "http://www.facebook.com/pages/railscasts/197415140659" %>
+          <%= link_to image_tag("icons/facebook.png", :size => "34x34"), "https://www.facebook.com/pages/TitaniumCasts/181579721927394" %>
           <span class="name">follow on Facebook</span>
         </li>
         <li>
-          <%= link_to image_tag("icons/rss.png", :size => "34x34"), "http://feeds.feedburner.com/railscasts" %>
+          <%= link_to image_tag("icons/rss.png", :size => "34x34"), "http://feeds.feedburner.com/titaniumcasts" %>
           <span class="name">subscribe to RSS feed</span>
         </li>
       </ul>
@@ -62,19 +62,21 @@
     </div>
     <div id="footer">
       <div class="inner">
-        &copy;<%= Date.today.year %> RailsCasts - Hosted by <%= link_to "Linode", "http://www.linode.com/?utm_source=railscasts.com&utm_medium=Badge&utm_campaign=Railscasts" %> - This site is <%= link_to "open source", "https://github.com/ryanb/railscasts" %>
+        &copy;<%= Date.today.year %> TitaniumCasts - Hosted by <%= link_to "Heroku", "http://www.heroku.com/" %> - This site is <%= link_to "open source", "https://github.com/rubenfonseca/titaniumcasts" %>
       </div>
     </div>
 
     <!-- Google Analytics -->
     <script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-7696481-1");
-pageTracker._trackPageview();
-} catch(err) {}</script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-26691127-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script></script>
   </body>
 </html>
